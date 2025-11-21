@@ -1,0 +1,677 @@
+1.explore git and GitHub commands ----------------------------------------------------------------------
+
+# ✅ **GIT BASICS — STEP BY STEP**
+
+### **1. Set up Git**
+
+```bash
+git config --global user.name "Your Name"      # Set username
+git config --global user.email "you@email.com" # Set email
+git config --list                               # View config
+```
+
+---
+
+# ✅ **START A PROJECT**
+
+### **2. Initialize Repository**
+
+```bash
+mkdir myproject     # Create folder
+cd myproject        # Enter folder
+git init            # Start git repo
+```
+
+### **3. Check Status**
+
+```bash
+git status          # See untracked/modified files
+```
+
+---
+
+# ✅ **ADD & COMMIT**
+
+### **4. Add Files**
+
+```bash
+git add file.txt    # Stage one file
+git add .           # Stage all files
+```
+
+### **5. Commit**
+
+```bash
+git commit -m "Initial commit"   # Save snapshot
+```
+
+---
+
+# ✅ **VIEW HISTORY**
+
+```bash
+git log                             # Detailed history
+git log --oneline                   # Short history
+git log --oneline --graph --all     # Tree view
+```
+
+---
+
+# ✅ **BRANCHING**
+
+### **6. Create & Switch Branch**
+
+```bash
+git branch feature1          # Create branch
+git switch feature1          # Switch to branch
+```
+
+(Old method: `git checkout -b feature1`)
+
+### **7. Merge Branch**
+
+```bash
+git switch main              # Go to main
+git merge feature1           # Merge branch into main
+```
+
+---
+
+# ✅ **REMOTE (GITHUB)**
+
+### **8. Add Remote**
+
+```bash
+git remote add origin https://github.com/user/repo.git 
+git branch - M main
+git push - U origin main  
+
+
+2. source code management on GitHub ------------------------------------------------------------------------------
+
+
+# ✅ **EXAM ANSWER (WRITE THIS EXACTLY)**
+
+**Steps to practice Source Code Management using GitHub:**
+
+1. Create a new folder and open Terminal/Command Prompt inside it.
+2. Initialize Git using `git init`.
+3. Create a source code file (example: `demo.txt`) and write some content.
+4. Check the status using `git status`.
+5. Add the file to staging using `git add .`.
+6. Commit the file using `git commit -m "Initial commit"`.
+7. Create a new repository on GitHub.
+8. Copy the repository HTTPS URL.
+9. Connect local repo to GitHub using `git remote add origin <URL>`.
+10. Push the code to GitHub using `git push -u origin main`.
+11. Update or modify the source code file.
+12. Check the changes using `git status` and `git diff`.
+13. Add updated file using `git add .`.
+14. Commit the update using `git commit -m "Updated source code"`.
+15. Push changes using `git push`.
+16. View commit history using `git log --oneline`.
+
+---
+
+# ✅ **PRACTICAL COMMANDS**
+
+```bash
+mkdir gitpractice
+cd gitpractice
+
+git init
+echo "Hello Git" > demo.txt
+
+git status
+git add .
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/yourusername/reponame.git
+git push -u origin main
+
+echo "This is an update" >> demo.txt
+
+git status
+git diff
+
+git add .
+git commit -m "Updated source code"
+git push
+
+```
+
+3. Jenkins installation and setup . explore the environment procedure-------------------------------------------
+
+Here is the **same simple exam-friendly format** for:
+
+# **“Jenkins Installation and Setup – Explore the Environment”**
+
+Very clean. No unnecessary text. Perfect for practical exam.
+
+---
+
+# ✅ **EXAM ANSWER (WRITE THIS EXACTLY)**
+
+**Steps to install and set up Jenkins and explore its environment:**
+
+1. Install Java (JDK) and verify using `java -version`.
+2. Download the Jenkins installer from the official Jenkins website.
+3. Install Jenkins using the installer or package manager.
+4. Start the Jenkins service.
+5. Open a browser and go to `http://localhost:8080`.
+6. Retrieve the initial admin password from the Jenkins log or file.
+7. Enter the password and continue setup.
+8. Install the recommended plugins.
+9. Create a new admin user and complete the setup wizard.
+10. Explore the Jenkins dashboard.
+11. Create a new freestyle project.
+12. Configure source code repository and build steps.
+13. Save the project and run the first build.
+14. View build history and console output.
+15. Explore Jenkins settings, plugins, and system configuration.
+
+---
+
+# ✅ **PRACTICAL COMMANDS (TYPE THESE)**
+
+### **1. Check Java**
+
+```bash
+java -version
+```
+
+### **2. Install Jenkins (Ubuntu example)**
+
+```bash
+sudo apt update
+sudo apt install openjdk-17-jdk
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins
+```
+
+### **3. Start Jenkins**
+
+```bash
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+```
+
+### **4. Open Jenkins UI**
+
+Browser URL:
+
+```
+http://localhost:8080
+```
+
+### **5. Get Initial Admin Password**
+
+```bash
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+### **6. Install Plugins & Create Admin User**
+
+(Follow UI instructions)
+
+### **7. Create a Freestyle Project**
+
+In Jenkins Dashboard:
+
+* **New Item**
+* **Freestyle Project**
+* Add **Build Step** (e.g., shell command)
+
+### **8. Run Build**
+
+```bash
+echo "Build running in Jenkins"
+```
+
+### **9. View Build History**
+
+Inside project → **Build History** → **Console Output**
+
+---
+
+4.demonstrate continuous and development using Jenkins------------------------------------------------------------
+Here is the **same simple exam-ready format** for:
+
+# **“Demonstrate Continuous Integration & Continuous Development using Jenkins”**
+
+Perfect for exam/practical. No extra text.
+
+---
+
+# ✅ **EXAM ANSWER (WRITE THIS EXACTLY)**
+
+**Steps to demonstrate Continuous Integration (CI) and Continuous Development/Deployment (CD) using Jenkins:**
+
+1. Install Jenkins and complete the initial setup.
+2. Open Jenkins dashboard at `http://localhost:8080`.
+3. Create a new Freestyle or Pipeline project.
+4. Configure the project to connect with a GitHub repository.
+5. Add repository URL under “Source Code Management”.
+6. Enable “Build Triggers” and select **GitHub webhook** or **Poll SCM**.
+7. Add build steps (example: compile code, run tests, or execute a script).
+8. Save the configuration.
+9. Push new code to GitHub to trigger CI automatically.
+10. Jenkins fetches the updated code and starts a new build.
+11. Observe the build status (Success/Fail) on the Jenkins dashboard.
+12. For CD, add a post-build action (e.g., deploy script or copy files to server).
+13. Save and run the job again.
+14. Verify that after each code update, Jenkins automatically builds and deploys the application.
+15. Check build history and console output to confirm CI/CD pipeline execution.
+
+---
+
+# ✅ **PRACTICAL STEPS & COMMANDS**
+
+### **1. Create a GitHub Repo**
+
+```bash
+echo "print('Hello CI/CD')" > app.py
+git add .
+git commit -m "Initial code"
+git push
+```
+
+### **2. Create Jenkins Freestyle Project**
+
+* Go to **New Item → Freestyle Project**
+* Add GitHub repo URL
+
+### **3. Add Build Trigger**
+
+* **Poll SCM**
+
+  ```
+  * * * * *
+  ```
+
+  (checks every minute)
+
+### **4. Add Build Step (Shell Command)**
+
+```bash
+echo "Running CI Build"
+python3 app.py
+```
+
+### **5. Save and Build**
+
+Click **Build Now**.
+
+### **6. Update Code (CI Trigger)**
+
+```bash
+echo "print('Updated Code Build')" >> app.py
+git add .
+git commit -m "Updated code for CI"
+git push
+```
+
+### **7. Jenkins Auto Build**
+
+* Jenkins detects changes
+* Starts new build
+* Shows build status in dashboard
+
+### **8. Add Deployment Step (CD Example)**
+
+Shell command:
+
+```bash
+echo "Deploying application..."
+cp app.py /var/www/html/
+```
+
+### **9. Check Build History**
+
+* Open project → **Build History**
+* View **Console Output** for CI/CD execution
+
+
+5. explore docker commands for content management----------------------------------------------------------------
+
+Here is the **same simple, exam-ready format** for:
+
+# **“Explore Docker Commands for Container Management”**
+
+Clean, short, perfect for practical & theory exam.
+
+---
+
+# ✅ **EXAM ANSWER (WRITE THIS EXACTLY)**
+
+**Steps to explore Docker commands for container management:**
+
+1. Install Docker and verify installation.
+2. Pull an image from Docker Hub.
+3. List available images.
+4. Run a container from an image.
+5. List running containers.
+6. Stop a running container.
+7. Start a stopped container.
+8. Restart a container.
+9. Remove a container.
+10. Remove an image.
+11. Inspect container details.
+12. View container logs.
+13. Execute commands inside a running container.
+14. Explore Docker system information and disk usage.
+
+---
+
+# ✅ **PRACTICAL DOCKER COMMANDS**
+
+### **1. Check Docker Installation**
+
+```bash
+docker --version
+docker info
+```
+
+### **2. Pull an Image**
+
+```bash
+docker pull ubuntu
+```
+
+### **3. List Images**
+
+```bash
+docker images
+```
+
+### **4. Run a Container**
+
+```bash
+docker run -it ubuntu
+```
+
+### **5. List Running Containers**
+
+```bash
+docker ps
+```
+
+### **6. List All Containers**
+
+```bash
+docker ps -a
+```
+
+### **7. Stop a Container**
+
+```bash
+docker stop <container_id>
+```
+
+### **8. Start a Container**
+
+```bash
+docker start <container_id>
+```
+
+### **9. Restart a Container**
+
+```bash
+docker restart <container_id>
+```
+
+### **10. Remove a Container**
+
+```bash
+docker rm <container_id>
+```
+
+### **11. Remove an Image**
+
+```bash
+docker rmi ubuntu
+```
+
+### **12. View Container Logs**
+
+```bash
+docker logs <container_id>
+```
+
+### **13. Execute a Command Inside Running Container**
+
+```bash
+docker exec -it <container_id> bash
+```
+
+### **14. Inspect Container**
+
+```bash
+docker inspect <container_id>
+```
+
+### **15. Check Docker System Disk Usage**
+
+```bash
+docker system df
+```
+
+6.develop a simple containerd application using docker----------------------------------------------------------
+
+
+Let’s make this super simple so you can easily write or run it during your lab or exam.
+We’ll create a basic containerized web app using Docker — step-by-step with full explanation and code 👇
+
+🧱 Goal:
+
+Create a simple Python web app (using Flask) and run it inside a Docker container.
+
+⚙️ Step 1: Create project folder
+
+Open a terminal and create a folder for the project:
+
+mkdir docker_app
+cd docker_app
+
+📝 Step 2: Create a simple web app file
+
+Create a Python file named app.py inside the folder:
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Docker! This app is running inside a container."
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
+
+✅ This code starts a web server that listens on port 5000 and prints a message.
+
+📄 Step 3: Create a requirements.txt file
+
+This file lists the dependencies needed for the app:
+
+flask
+
+🐳 Step 4: Create the Dockerfile
+
+Create a file named Dockerfile (no extension) in the same folder:
+
+# Use an official Python base image
+FROM python:3.9-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy project files into the container
+COPY . /app
+
+# Install dependencies
+RUN pip install -r requirements.txt
+
+# Expose port 5000 for web traffic
+EXPOSE 5000
+
+# Run the application
+CMD ["python", "app.py"]
+
+🚀 Step 5: Build the Docker image
+
+Run the following command in your terminal:
+
+docker build -t simple-docker-app .
+
+
+This will build an image named simple-docker-app.
+
+▶️ Step 6: Run the container
+
+Run the image as a container:
+
+docker run -d -p 5000:5000 simple-docker-app
+
+
+✅ -d runs it in background
+✅ -p 5000:5000 maps your local port 5000 to the container’s port 5000
+
+🌐 Step 7: Test it
+
+Open your web browser and visit:
+
+http://localhost:5000
+
+
+You should see:
+
+Hello, Docker! This app is running inside a container.
+
+🧹 Step 8: Stop and remove the container (optional)
+
+To stop:
+
+docker ps          # get container ID
+docker stop <container_id>
+
+
+To remove:
+
+docker rm <container_id>
+
+✅ Output (Browser or Terminal)
+
+Output:
+
+Hello, Docker! This app is running inside a container.
+
+
+7. write code for a simple user registration and push the code in github-----------------------------------
+
+Here is a **simple HTML User Registration Form** + **steps to push it to GitHub**.
+Clean, exam-ready, easy.
+
+---
+
+# ✅ **1. Simple User Registration Code (HTML)**
+
+### 📌 **registration.html**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+
+    <h2>Simple User Registration Form</h2>
+
+    <form>
+        <label>Name:</label><br>
+        <input type="text" placeholder="Enter your name"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter your email"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" placeholder="Enter your password"><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
+```
+
+---
+
+# ✅ **2. Save File**
+
+Save as **registration.html** inside a folder named **user-registration**.
+
+---
+
+# ✅ **3. Initialize Git Repository**
+
+```bash
+mkdir user-registration
+cd user-registration
+
+git init
+```
+
+---
+
+# ✅ **4. Add the HTML File**
+
+```bash
+git add registration.html
+git status
+```
+
+---
+
+# ✅ **5. Commit the File**
+
+```bash
+git commit -m "Added simple HTML user registration form"
+```
+
+---
+
+# ✅ **6. Create New GitHub Repository**
+
+GitHub → New Repository → Name: **user-registration** → Create.
+
+Copy the repo URL (example):
+
+```
+https://github.com/yourusername/user-registration.git
+```
+
+---
+
+# ✅ **7. Add Remote Origin**
+
+```bash
+git remote add origin https://github.com/yourusername/user-registration.git
+```
+
+---
+
+# ✅ **8. Push to GitHub**
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+---
+
